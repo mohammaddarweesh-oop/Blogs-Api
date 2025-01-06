@@ -37,7 +37,7 @@ module.exports.registerUserCtrl = asyncHandler(async (req, res, next) => {
     password: hashPassword,
   });
   await user.save();
-  // @TODO - SENDING Email (Verify account if not verified )
+  // @TODO - SENDING Email (Verify account if not verified ) //
 
   //send response to client
   res.status(201).json({ message: "you registered new user successfully" });
@@ -79,5 +79,4 @@ module.exports.loginUserCtrl = asyncHandler(async (req, res) => {
     bio: user.bio,
     token: token,
   });
-  
 });
